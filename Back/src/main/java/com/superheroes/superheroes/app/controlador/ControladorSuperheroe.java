@@ -26,7 +26,12 @@ public class ControladorSuperheroe {
 	@Autowired
 	private ServicioSuperheroe servicioSuperheroe;
 	
-	@PostMapping
+	@PostMapping("/insertarDatos")
+	public ResponseEntity<List<Superheroe>> insertarDatos(){
+		return new ResponseEntity<List<Superheroe>>(servicioSuperheroe.insertarDatos(),HttpStatus.OK);
+	}
+	
+	@PostMapping("/insertar")
 	public ResponseEntity<Superheroe> guardarSuperheroe(@RequestBody Superheroe heroe) {
 		return new ResponseEntity<Superheroe>(servicioSuperheroe.guardarSuperhereo(heroe),HttpStatus.CREATED);
 	}
@@ -59,4 +64,5 @@ public class ControladorSuperheroe {
 	public ResponseEntity<List<Superheroe>> listSearchByNombre(@PathVariable("string") String string){
 		return new ResponseEntity<List<Superheroe>>(servicioSuperheroe.findByNombre(string),HttpStatus.OK);
 	} 
+	
 }
