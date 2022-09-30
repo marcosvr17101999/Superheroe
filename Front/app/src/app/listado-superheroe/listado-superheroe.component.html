@@ -1,0 +1,81 @@
+<div class="wrapper">
+  <div class="bloqueAniadir">
+    <button mat-stroked-button (click)="formularioAniadir()" id="botonesTop">
+      Añadir
+    </button>
+    <div [ngClass]="aniadir ? 'invisible' : 'visible'">
+      <mat-form-field appearance="standard">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre" [(ngModel)]="heroeNombre" />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Poder</mat-label>
+        <input matInput placeholder="Poder" [(ngModel)]="heroePoder" />
+      </mat-form-field>
+
+      <button
+        mat-stroked-button
+        (click)="onSubmit()"
+        id="botonesTop"
+        *ngIf="(heroeNombre.length && heroePoder.length) > 0"
+      >
+        Añadir
+      </button>
+    </div>
+  </div>
+  <div class="busqueda">
+    <mat-form-field appearance="standard">
+      <mat-label>Busqueda</mat-label>
+      <input matInput placeholder="Busqueda" [(ngModel)]="busqueda" />
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="onSearch(busqueda)" id="botonesTop">
+      Busqueda
+    </button>
+    <button mat-stroked-button (click)="onSearch('')" id="botonesTop">
+      <mat-icon>filter_list</mat-icon>Limpiar
+    </button>
+  </div>
+  <div class="tabla">
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="poder">
+        <th mat-header-cell *matHeaderCellDef>Poder</th>
+        <td mat-cell *matCellDef="let element">{{ element.poder }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="abrirDialogo(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <div class="paginador">
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

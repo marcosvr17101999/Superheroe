@@ -1,0 +1,51 @@
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 8px;
+}
+.input{
+  color: black;
+}
+.wrapper{
+  display: grid;
+  grid-template-columns:20% 30% 30% 20%;
+  grid-gap: 10px;
+  grid-template-rows: 80px 60% 20%;
+}
+
+.busqueda{
+  grid-column: 3/4;
+  grid-row: 1;
+  text-align: end;
+}
+.bloqueAniadir{
+  grid-column: 2/3;
+  grid-row: 1;
+
+}
+#botonesTop {
+    background-color: rgb(151, 151, 247);
+    color: rgb(8, 0, 83);
+  }
+
+
+#busquedad{
+  width: max-content;
+  height: max-content;
+}
+.tabla{
+  grid-column: 2/4;
+  grid-row: 2;
+  table{
+    width: 100%;
+  }
+}
+.paginador{
+  margin-top: 15px;
+  grid-column: 3/4;
+  grid-row: 3;
+}
+.visible{
+  visibility: hidden
+}
+.invisible{
+    visibility: visible
+}

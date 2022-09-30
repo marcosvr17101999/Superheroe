@@ -1,0 +1,52 @@
+[
+  {
+    "id":1,
+    "nombre": "spiderman",
+    "poder":"trepar paredes"
+  },
+  {
+    "id":2,
+    "nombre": "batman",
+    "poder":"dinero"
+  },
+  {
+    "id":3,
+    "nombre": "superman",
+    "poder":"volar"
+  },
+  {
+    "id":4,
+    "nombre": "wolverine",
+    "poder":"regeneracion"
+  },
+  {
+    "id":5,
+    "nombre": "capitan america",
+    "poder":"fuerza"
+  },
+  {
+    "id":6,
+    "nombre": "ironman",
+    "poder":"inteligencia"
+  },
+  {
+    "id":7,
+    "nombre": "hulk",
+    "poder":"fuerza"
+  },
+  {
+    "id":8,
+    "nombre": "thor",
+    "poder":"rayos"
+  },
+  {
+    "id":9,
+    "nombre": "doctor strange",
+    "poder":"magia"
+  },
+  {
+    "id": 10,
+    "nombre": "loki",
+    "poder":"magia"
+  }
+]
